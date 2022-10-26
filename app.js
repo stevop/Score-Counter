@@ -26,7 +26,7 @@ playerOneButton.addEventListener("click", () => {
 
             results.innerHTML = "";
             let p = document.createElement("p");
-            p.innerHTML = `Zápas skončil výsledkom <br> ${h2}.`
+            p.innerHTML = `Zápas skončil výsledkom <br> <b>${h2}</b>.`
             results.appendChild(p);
         }
         playerOne.textContent = playerOneScore;
