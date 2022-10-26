@@ -8,15 +8,26 @@
     <title>Počítadlo skóre</title>
 </head>
 <body>
-    <h1>Skóre</h1>
-    <h2>
-        <span class="playerOne">0</span> : <span class="playerTwo">0</span>
-    </h2>
-
-    <button class="playerOneButton">+1 Hráč 1</button>
-    <button class="playerTwoButton">+1 Hráč 2</button>
-    <button class="resetButton">Reset Skóre</button>
+    <section>
+        <h1>Skóre</h1>
+        <h2>
+            <span class="playerOne">0</span> : <span class="playerTwo">0</span>
+        </h2>
+       
     
+
+        <div class="scoreButtons">
+            <button class="playerOneButton">+1 Hráč 1</button>
+            <select name="" id="score">
+                <option value="0">-</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+            </select>
+            <button class="playerTwoButton">+1 Hráč 2</button>
+        </div>
+        <button class="resetButton">Reset Skóre</button>
+    </section>    
     <script src="app.js"></script>
 </body>
 </html>
