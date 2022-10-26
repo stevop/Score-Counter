@@ -26,7 +26,7 @@ playerOneButton.addEventListener("click", () => {
 
             results.innerHTML = "";
             let p = document.createElement("p");
-            p.innerHTML = `Zápas skončil výsledkom <br> <b>${h2}</b>.`
+            p.textContent = "Zápas skončil."
             results.appendChild(p);
         }
         playerOne.textContent = playerOneScore;
@@ -42,6 +42,11 @@ playerTwoButton.addEventListener("click", () => {
             isGameOver = true;
             playerOne.classList.add("loser");
             playerTwo.classList.add("winner");
+
+            results.innerHTML = "";
+            let p = document.createElement("p");
+            p.textContent = "Zápas skončil."
+            results.appendChild(p);
         }
         playerTwo.textContent = playerTwoScore;
     }
