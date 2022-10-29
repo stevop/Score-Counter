@@ -16,45 +16,48 @@ let isGameOver = false;
 
 // PLAYER ONE SETTINGS
 playerOneButton.addEventListener("click", () => {
-    if(!isGameOver){
-        playerOneScore ++;
-        
-        if(playerOneScore === winningScore){
-            isGameOver = true;
-            playerOne.classList.add("winner");
-            playerTwo.classList.add("loser");
+    if(winningScore !== 0){
+        if(!isGameOver){
+            playerOneScore ++;
+            
+            if(playerOneScore === winningScore){
+                isGameOver = true;
+                playerOne.classList.add("winner");
+                playerTwo.classList.add("loser");
 
-            results.innerHTML = "";
-            let p = document.createElement("p");
-            p.textContent = "Zápas skončil."
-            results.appendChild(p);
+                results.innerHTML = "";
+                let p = document.createElement("p");
+                p.textContent = "Zápas skončil."
+                results.appendChild(p);
+            }
+            playerOne.textContent = playerOneScore;
         }
-        playerOne.textContent = playerOneScore;
-    } 
-});
+}});
 
 // PLAYER TWO SETTINGS
 playerTwoButton.addEventListener("click", () => {
-    if(!isGameOver){
-        playerTwoScore ++;
-        
-        if(playerTwoScore === winningScore){
-            isGameOver = true;
-            playerOne.classList.add("loser");
-            playerTwo.classList.add("winner");
+    if(winningScore !== 0){
+        if(!isGameOver){
+                playerTwoScore ++;
 
-            results.innerHTML = "";
-            let p = document.createElement("p");
-            p.textContent = "Zápas skončil."
-            results.appendChild(p);
+            if(playerTwoScore === winningScore){
+                isGameOver = true;
+                playerOne.classList.add("loser");
+                playerTwo.classList.add("winner");
+
+                results.innerHTML = "";
+                let p = document.createElement("p");
+                p.textContent = "Zápas skončil."
+                results.appendChild(p);
+            }
+            playerTwo.textContent = playerTwoScore;
         }
-        playerTwo.textContent = playerTwoScore;
-    }
-});
+}});
 
 // SCORE SELECTOR
 scoreSelector.addEventListener("change", function () {
     winningScore = parseInt(this.value);
+    console.log(parseInt(this.value));
     reset();
 });
 
